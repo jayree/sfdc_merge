@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://github.com/jayree/sfdx-md-merge-driver/compare/v0.1.4...v0.1.5) (2020-05-12)
+
+
+### Bug Fixes
+
+* update dependencies ([7c89e90](https://github.com/jayree/sfdx-md-merge-driver/commit/7c89e90e0cda4f646bb00aebd84177e6f031761d))
+* update dependencies (use fixed version of tslib due to Cannot redefine property: default error) ([9425100](https://github.com/jayree/sfdx-md-merge-driver/commit/942510016e15db93f853285372eacdafae81add7))
+
 ### [0.1.4](https://github.com/jayree/sfdx-md-merge-driver/compare/v0.1.3...v0.1.4) (2020-02-06)
 
 
