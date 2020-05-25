@@ -39,6 +39,10 @@
     "uniqueKeys": ["field"],
     "equalKeys": ["field", "editable", "hidden", "readable"]
   },
+  "flowAccesses": {
+    "uniqueKeys": ["flow"],
+    "equalKeys": ["flow", "enabled"]
+  },
   "fullName": {
     "uniqueKeys": [],
     "equalKeys": []
