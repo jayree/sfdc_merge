@@ -1,5 +1,5 @@
-import * as path from 'path'
-import * as pkgDir from 'pkg-dir'
+import {join} from 'path'
+import {sync as pkgDirsync} from 'pkg-dir'
 
 class PackageJson {
   public path: string
@@ -10,11 +10,11 @@ class PackageJson {
 
   constructor() {
     this.path =
-      pkgDir.sync(path.join(__dirname, '..', '..')) ||
+      pkgDirsync(join(__dirname, '..', '..')) ||
       process.env.INIT_CWD ||
       process.cwd()
-    this.name = require(path.join(this.path, 'package.json')).name
-    this.version = require(path.join(this.path, 'package.json')).version
+    this.name = require(join(this.path, 'package.json')).name
+    this.version = require(join(this.path, 'package.json')).version
   }
 }
 

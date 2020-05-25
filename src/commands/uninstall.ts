@@ -30,7 +30,7 @@ hello world from ./src/hello.ts!
     }),
   }
 
-  async run() {
+  async run(): Promise<void> {
     const {flags} = this.parse(Uninstall)
     if (pjson.name !== 'sfdx-md-merge-driver') {
       const attrFile = path.join(
@@ -53,7 +53,7 @@ hello world from ./src/hello.ts!
       } catch (error) {}
       if (currAttrs) {
         let newAttrs = ''
-        currAttrs.forEach(attr => {
+        currAttrs.forEach((attr) => {
           const match = attr.match(/ merge=(.*)$/i)
           if (!match || match[1].trim() !== flags.name) {
             newAttrs += attr + '\n'

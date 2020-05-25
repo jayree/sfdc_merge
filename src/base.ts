@@ -3,7 +3,7 @@ import * as shell from 'shelljs'
 import * as path from 'path'
 
 export abstract class MergeDriverBase extends Command {
-  public findAttributes(global: boolean, pjpath: string) {
+  public findAttributes(global: boolean, pjpath: string): string {
     let attrFile
     if (global) {
       try {

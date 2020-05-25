@@ -32,7 +32,7 @@ hello world from ./src/hello.ts!
     },
   ]
 
-  async run() {
+  async run(): Promise<void> {
     const {args} = this.parse(Merge)
     const md = new (require('../utils/metadata-merger'))(
       args['%O'],
@@ -47,12 +47,12 @@ hello world from ./src/hello.ts!
     console.error('sfdx-md-merge-driver: merging', args['%P'])
 
     const ancient = []
-    Object.keys(ancientNodes).forEach(localpart => {
+    Object.keys(ancientNodes).forEach((localpart) => {
       let nodelist = ancientNodes[localpart]
       if (!Array.isArray(nodelist)) {
         nodelist = [nodelist]
       }
-      nodelist.forEach(node => {
+      nodelist.forEach((node) => {
         const uniqueNodeKey = md.buildUniqueKey(node, localpart)
         if (uniqueNodeKey) {
           ancient[uniqueNodeKey] = {
@@ -66,12 +66,12 @@ hello world from ./src/hello.ts!
     const ours = {}
     let oursIds = []
     let unmatchedNodeCount = 0
-    Object.keys(oursNodes).forEach(localpart => {
+    Object.keys(oursNodes).forEach((localpart) => {
       let nodelist = oursNodes[localpart]
       if (!Array.isArray(nodelist)) {
         nodelist = [nodelist]
       }
-      nodelist.forEach(node => {
+      nodelist.forEach((node) => {
         const uniqueNodeKey = md.buildUniqueKeyCount(
           node,
           localpart,
@@ -98,12 +98,12 @@ hello world from ./src/hello.ts!
     })
 
     let conflictCounter = 0
-    Object.keys(theirsNodes).forEach(localpart => {
+    Object.keys(theirsNodes).forEach((localpart) => {
       let nodelist = theirsNodes[localpart]
       if (!Array.isArray(nodelist)) {
         nodelist = [nodelist]
       }
-      nodelist.forEach(node => {
+      nodelist.forEach((node) => {
         const uniqueNodeKey = md.buildUniqueKey(node, localpart)
         if (uniqueNodeKey) {
           // eslint-disable-next-line no-eq-null, eqeqeq
@@ -119,7 +119,7 @@ hello world from ./src/hello.ts!
           if (oursIds.includes(uniqueNodeKey)) {
             existsInOurs = true
             // oursIds = oursIds.filter(function(value, index, arr) {
-            oursIds = oursIds.filter(function(value) {
+            oursIds = oursIds.filter(function (value) {
               return value !== uniqueNodeKey
             })
           } else {
@@ -160,10 +160,10 @@ hello world from ./src/hello.ts!
           } else {
             // CONFLICT detected
 
-            isEqualsToOursFailedList.forEach(entry => {
+            isEqualsToOursFailedList.forEach((entry) => {
               // eslint-disable-next-line no-eq-null, eqeqeq
               if (entry == null) {
-                Object.keys(node).forEach(nkey => {
+                Object.keys(node).forEach((nkey) => {
                   conflictCounter++
                   node[nkey][0] =
                     '\n<<<<<<< CURRENT\n=======\n' +
@@ -195,11 +195,11 @@ hello world from ./src/hello.ts!
     })
 
     oursIds.forEach(
-      id => {
+      (id) => {
         if (ours[id]) {
           if (ours[id].existsInAncient && !ours[id].isEqualsToAncient) {
             // not exists in theirs branch, modified in ours
-            Object.keys(ours[id].node).forEach(nkey => {
+            Object.keys(ours[id].node).forEach((nkey) => {
               conflictCounter++
               ours[id].node[nkey][0] =
                 '\n<<<<<<< CURRENT\n' +
@@ -215,7 +215,7 @@ hello world from ./src/hello.ts!
 
     Object.keys(ours)
       .sort()
-      .forEach(function(key) {
+      .forEach(function (key) {
         // eslint-disable-next-line no-negated-condition
         if (ours[key].nodeType !== '$') {
           if (!Array.isArray(base[md.metadataType][ours[key].nodeType])) {
