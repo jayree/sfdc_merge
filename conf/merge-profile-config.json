@@ -105,9 +105,15 @@
     "uniqueKeys": ["apexPage"],
     "equalKeys": ["apexPage", "enabled"]
   },
-  "profileActionOverrides" : {
-    "uniqueKeys" : [ "actionName", "type", "pageOrSobjectType", "formFactor" ],
-    "equalKeys"  : [ "actionName", "type", "pageOrSobjectType", "formFactor", "content" ]
+  "profileActionOverrides": {
+    "uniqueKeys": ["actionName", "type", "pageOrSobjectType", "formFactor"],
+    "equalKeys": [
+      "actionName",
+      "type",
+      "pageOrSobjectType",
+      "formFactor",
+      "content"
+    ]
   },
   "recordTypeVisibilities": {
     "uniqueKeys": ["recordType"],

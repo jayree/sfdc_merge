@@ -1,0 +1,5 @@
+*.md
+lib/**
+yarn.lock
+bin/**
+oclif.manifest.json

@@ -1,5 +1,10 @@
 {
-  "extends": ["oclif", "oclif-typescript"],
+  "extends": [
+    "oclif",
+    "oclif-typescript",
+    "prettier",
+    "prettier/@typescript-eslint"
+  ],
   "rules": {
     "space-before-function-paren": "off",
     "indent": "off",

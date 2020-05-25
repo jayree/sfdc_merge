@@ -121,7 +121,7 @@ class MetadataMerger {
     if (nodeTypeConfig) {
       uniqueKey = localpart + '#'
       if (nodeTypeConfig.uniqueKeys) {
-        nodeTypeConfig.uniqueKeys.forEach(key => {
+        nodeTypeConfig.uniqueKeys.forEach((key) => {
           if (node[key]) {
             uniqueKey += node[key][0] + '#'
           }

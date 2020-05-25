@@ -4,7 +4,7 @@ describe('install', () => {
   test
     .stdout()
     .command(['install'])
-    .it('runs install', ctx => {
+    .it('runs install', (ctx) => {
       expect(ctx.stdout).to.contain('')
     })
 })
