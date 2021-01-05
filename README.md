@@ -62,7 +62,7 @@ $ npm install -g sfdx-md-merge-driver
 $ sfdx-md-merge-driver COMMAND
 running command...
 $ sfdx-md-merge-driver (-v|--version|version)
-sfdx-md-merge-driver/0.1.5 darwin-x64 node-v12.16.1
+sfdx-md-merge-driver/0.1.5 darwin-x64 node-v14.15.1
 $ sfdx-md-merge-driver --help [COMMAND]
 USAGE
   $ sfdx-md-merge-driver COMMAND
@@ -107,7 +107,7 @@ OPTIONS
   --all  see all commands in CLI
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.0.1/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.1/src/commands/help.ts)_
 
 ## `sfdx-md-merge-driver install`
 
